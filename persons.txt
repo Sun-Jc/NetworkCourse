@@ -1,3 +1,0 @@
-1, person1
-2, person2
-3, person3
