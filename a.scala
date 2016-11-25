@@ -7,8 +7,8 @@ import java.io._
 //import org.apache.spark.rdd.RDD
 // Assume the SparkContext has already been constructed
 
-val edgeFile = "data/graphx/followers.txt"
-val nodeFile = "data/graphx/users.txt"
+val edgeFile = "data/graphx/mergedEdges.txt"
+val nodeFile = "data/graphx/mergedNodes.txt"
 
 // Load the edges as a graph
 val graph = GraphLoader.edgeListFile(sc, edgeFile)
@@ -19,7 +19,7 @@ val persons = sc.textFile(nodeFile).map { line => val fields = line.split(",") ;
 val ranksByPersonname = persons.join(ranks).map { case (id, (personName, rank)) => (personName, rank) }
 // Print the result
 //println(ranksByPersonname.collect().mkString("\n"))
-val file = new File("data/graphx/ranks.txt")
+val file = new File("data/graphx/dblpRanks.txt")
 val bw = new BufferedWriter(new FileWriter(file))
 bw.write(ranksByPersonname.collect().mkString("\n"))
 bw.close()
