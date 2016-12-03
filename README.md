@@ -2,7 +2,7 @@
 
 1. filter on edges.csv [TODO]
 
-2. $ java -jar merge.jar edges.csv nodes.csv
+2. $ java -jar merge.jar edgesFiltered.csv nodesFiltered.csv
 
 3. $ python3 csv2edges_undirected.py mergedEdges.csv
    $ python3 csv2nodes.py mergedNodes.csv
