@@ -6,6 +6,7 @@ scalaVersion := "2.11.8"
 
 fork := true
 
+//spIgnoreProvided := true
 
 libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % "2.0.2",

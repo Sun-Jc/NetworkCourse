@@ -7,12 +7,12 @@
 		revision="1.0"
 		conf="runtime"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20161203223931"/>
+		date="20161204001405"/>
 	<dependencies>
 		<module organisation="org.apache.spark" name="spark-graphx_2.11">
 			<revision name="2.0.2" status="release" pubdate="20161108114717" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="119">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="5858" time="1395" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-graphx_2.11/ivy-2.0.2.xml" searched="true" original-local-location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-graphx_2.11/ivy-2.0.2.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-graphx_2.11/2.0.2/spark-graphx_2.11-2.0.2.pom"/>
+				<metadata-artifact status="successful" details="" size="5858" time="738" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-graphx_2.11/ivy-2.0.2.xml" searched="true" original-local-location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-graphx_2.11/ivy-2.0.2.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-graphx_2.11/2.0.2/spark-graphx_2.11-2.0.2.pom"/>
 				<caller organisation="simple-project" name="simple-project_2.11" conf="compile, runtime" rev="2.0.2" rev-constraint-default="2.0.2" rev-constraint-dynamic="2.0.2" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="spark-graphx_2.11" type="jar" ext="jar" status="no" details="" size="679215" time="0" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-graphx_2.11/jars/spark-graphx_2.11-2.0.2.jar">
@@ -107,7 +107,7 @@
 		<module organisation="org.apache.spark" name="spark-core_2.11">
 			<revision name="2.0.2" status="release" pubdate="20161108114212" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="1">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="21047" time="1728" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-core_2.11/ivy-2.0.2.xml" searched="true" original-local-location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-core_2.11/ivy-2.0.2.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.11/2.0.2/spark-core_2.11-2.0.2.pom"/>
+				<metadata-artifact status="successful" details="" size="21047" time="1015" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-core_2.11/ivy-2.0.2.xml" searched="true" original-local-location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-core_2.11/ivy-2.0.2.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.11/2.0.2/spark-core_2.11-2.0.2.pom"/>
 				<caller organisation="simple-project" name="simple-project_2.11" conf="compile, runtime" rev="2.0.2" rev-constraint-default="2.0.2" rev-constraint-dynamic="2.0.2" callerrev="1.0"/>
 				<caller organisation="org.apache.spark" name="spark-graphx_2.11" conf="default, compile, runtime, master" rev="2.0.2" rev-constraint-default="2.0.2" rev-constraint-dynamic="2.0.2" callerrev="2.0.2"/>
 				<artifacts>
@@ -732,7 +732,7 @@
 		<module organisation="org.apache.spark" name="spark-unsafe_2.11">
 			<revision name="2.0.2" status="release" pubdate="20161108114136" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="65">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="4659" time="1352" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-unsafe_2.11/ivy-2.0.2.xml" searched="true" original-local-location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-unsafe_2.11/ivy-2.0.2.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-unsafe_2.11/2.0.2/spark-unsafe_2.11-2.0.2.pom"/>
+				<metadata-artifact status="successful" details="" size="4659" time="750" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-unsafe_2.11/ivy-2.0.2.xml" searched="true" original-local-location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-unsafe_2.11/ivy-2.0.2.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-unsafe_2.11/2.0.2/spark-unsafe_2.11-2.0.2.pom"/>
 				<caller organisation="org.apache.spark" name="spark-core_2.11" conf="default, compile, runtime, master" rev="2.0.2" rev-constraint-default="2.0.2" rev-constraint-dynamic="2.0.2" callerrev="2.0.2"/>
 				<artifacts>
 					<artifact name="spark-unsafe_2.11" type="jar" ext="jar" status="no" details="" size="41074" time="0" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-unsafe_2.11/jars/spark-unsafe_2.11-2.0.2.jar">
@@ -756,7 +756,7 @@
 		<module organisation="org.apache.spark" name="spark-network-shuffle_2.11">
 			<revision name="2.0.2" status="release" pubdate="20161108114805" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="64">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="3995" time="1224" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-network-shuffle_2.11/ivy-2.0.2.xml" searched="true" original-local-location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-network-shuffle_2.11/ivy-2.0.2.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-network-shuffle_2.11/2.0.2/spark-network-shuffle_2.11-2.0.2.pom"/>
+				<metadata-artifact status="successful" details="" size="3995" time="787" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-network-shuffle_2.11/ivy-2.0.2.xml" searched="true" original-local-location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-network-shuffle_2.11/ivy-2.0.2.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-network-shuffle_2.11/2.0.2/spark-network-shuffle_2.11-2.0.2.pom"/>
 				<caller organisation="org.apache.spark" name="spark-core_2.11" conf="default, compile, runtime, master" rev="2.0.2" rev-constraint-default="2.0.2" rev-constraint-dynamic="2.0.2" callerrev="2.0.2"/>
 				<artifacts>
 					<artifact name="spark-network-shuffle_2.11" type="jar" ext="jar" status="no" details="" size="55512" time="0" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-network-shuffle_2.11/jars/spark-network-shuffle_2.11-2.0.2.jar">
@@ -768,7 +768,7 @@
 		<module organisation="org.apache.spark" name="spark-network-common_2.11">
 			<revision name="2.0.2" status="release" pubdate="20161108114158" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="58">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="4897" time="1242" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-network-common_2.11/ivy-2.0.2.xml" searched="true" original-local-location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-network-common_2.11/ivy-2.0.2.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-network-common_2.11/2.0.2/spark-network-common_2.11-2.0.2.pom"/>
+				<metadata-artifact status="successful" details="" size="4897" time="765" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-network-common_2.11/ivy-2.0.2.xml" searched="true" original-local-location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-network-common_2.11/ivy-2.0.2.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-network-common_2.11/2.0.2/spark-network-common_2.11-2.0.2.pom"/>
 				<caller organisation="org.apache.spark" name="spark-core_2.11" conf="default, compile, runtime, master" rev="2.0.2" rev-constraint-default="2.0.2" rev-constraint-dynamic="2.0.2" callerrev="2.0.2"/>
 				<caller organisation="org.apache.spark" name="spark-network-shuffle_2.11" conf="compile, runtime" rev="2.0.2" rev-constraint-default="2.0.2" rev-constraint-dynamic="2.0.2" callerrev="2.0.2"/>
 				<artifacts>
@@ -869,7 +869,7 @@
 		<module organisation="org.apache.spark" name="spark-launcher_2.11">
 			<revision name="2.0.2" status="release" pubdate="20161108114615" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="53">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="6390" time="1245" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-launcher_2.11/ivy-2.0.2.xml" searched="true" original-local-location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-launcher_2.11/ivy-2.0.2.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-launcher_2.11/2.0.2/spark-launcher_2.11-2.0.2.pom"/>
+				<metadata-artifact status="successful" details="" size="6390" time="773" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-launcher_2.11/ivy-2.0.2.xml" searched="true" original-local-location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-launcher_2.11/ivy-2.0.2.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-launcher_2.11/2.0.2/spark-launcher_2.11-2.0.2.pom"/>
 				<caller organisation="org.apache.spark" name="spark-core_2.11" conf="default, compile, runtime, master" rev="2.0.2" rev-constraint-default="2.0.2" rev-constraint-dynamic="2.0.2" callerrev="2.0.2"/>
 				<artifacts>
 					<artifact name="spark-launcher_2.11" type="jar" ext="jar" status="no" details="" size="65655" time="0" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-launcher_2.11/jars/spark-launcher_2.11-2.0.2.jar">
@@ -881,7 +881,7 @@
 		<module organisation="org.apache.spark" name="spark-tags_2.11">
 			<revision name="2.0.2" status="release" pubdate="20161108114251" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="54">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="1856" time="1315" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-tags_2.11/ivy-2.0.2.xml" searched="true" original-local-location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-tags_2.11/ivy-2.0.2.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-tags_2.11/2.0.2/spark-tags_2.11-2.0.2.pom"/>
+				<metadata-artifact status="successful" details="" size="1856" time="774" location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-tags_2.11/ivy-2.0.2.xml" searched="true" original-local-location="/Users/SunJc/.ivy2/cache/org.apache.spark/spark-tags_2.11/ivy-2.0.2.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-tags_2.11/2.0.2/spark-tags_2.11-2.0.2.pom"/>
 				<caller organisation="org.apache.spark" name="spark-core_2.11" conf="default, compile, runtime, master" rev="2.0.2" rev-constraint-default="2.0.2" rev-constraint-dynamic="2.0.2" callerrev="2.0.2"/>
 				<caller organisation="org.apache.spark" name="spark-graphx_2.11" conf="default, compile, runtime, master" rev="2.0.2" rev-constraint-default="2.0.2" rev-constraint-dynamic="2.0.2" callerrev="2.0.2"/>
 				<caller organisation="org.apache.spark" name="spark-network-common_2.11" conf="compile, runtime" rev="2.0.2" rev-constraint-default="2.0.2" rev-constraint-dynamic="2.0.2" callerrev="2.0.2"/>
@@ -1329,52 +1329,6 @@
 				</artifacts>
 			</revision>
 		</module>
-		<module organisation="org.apache.avro" name="avro">
-			<revision name="1.7.4" status="release" pubdate="20130223015907" resolver="sbt-chain" artresolver="sbt-chain" evicted="latest-revision" evicted-reason="" homepage="http://avro.apache.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
-				<metadata-artifact status="no" details="" size="9661" time="0" location="/Users/SunJc/.ivy2/cache/org.apache.avro/avro/ivy-1.7.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/avro/avro/1.7.4/avro-1.7.4.pom"/>
-				<evicted-by rev="1.7.7"/>
-				<caller organisation="org.apache.hadoop" name="hadoop-common" conf="compile, runtime" rev="1.7.4" rev-constraint-default="1.7.4" rev-constraint-dynamic="1.7.4" callerrev="2.2.0"/>
-				<artifacts>
-				</artifacts>
-			</revision>
-			<revision name="1.7.7" status="release" pubdate="20140719040856" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://avro.apache.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="4">
-				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="no" details="" size="11109" time="0" location="/Users/SunJc/.ivy2/cache/org.apache.avro/avro/ivy-1.7.7.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/avro/avro/1.7.7/avro-1.7.7.pom"/>
-				<caller organisation="org.apache.hadoop" name="hadoop-common" conf="compile, runtime" rev="1.7.4" rev-constraint-default="1.7.4" rev-constraint-dynamic="1.7.4" callerrev="2.2.0"/>
-				<caller organisation="org.apache.avro" name="avro-ipc" conf="compile, runtime" rev="1.7.7" rev-constraint-default="1.7.7" rev-constraint-dynamic="1.7.7" callerrev="1.7.7"/>
-				<artifacts>
-					<artifact name="avro" type="jar" ext="jar" status="no" details="" size="436303" time="0" location="/Users/SunJc/.ivy2/cache/org.apache.avro/avro/jars/avro-1.7.7.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/avro/avro/1.7.7/avro-1.7.7.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.codehaus.jackson" name="jackson-core-asl">
-			<revision name="1.8.8" status="release" pubdate="20120121092420" resolver="sbt-chain" artresolver="sbt-chain" evicted="latest-revision" evicted-reason="" homepage="http://jackson.codehaus.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
-				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="no" details="" size="2563" time="0" location="/Users/SunJc/.ivy2/cache/org.codehaus.jackson/jackson-core-asl/ivy-1.8.8.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/codehaus/jackson/jackson-core-asl/1.8.8/jackson-core-asl-1.8.8.pom"/>
-				<evicted-by rev="1.9.13"/>
-				<caller organisation="org.apache.hadoop" name="hadoop-common" conf="compile, runtime" rev="1.8.8" rev-constraint-default="1.8.8" rev-constraint-dynamic="1.8.8" callerrev="2.2.0"/>
-				<caller organisation="org.apache.hadoop" name="hadoop-hdfs" conf="compile, runtime" rev="1.8.8" rev-constraint-default="1.8.8" rev-constraint-dynamic="1.8.8" callerrev="2.2.0"/>
-				<artifacts>
-				</artifacts>
-			</revision>
-			<revision name="1.9.13" status="release" pubdate="20130715110730" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jackson.codehaus.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="5">
-				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="no" details="" size="2564" time="0" location="/Users/SunJc/.ivy2/cache/org.codehaus.jackson/jackson-core-asl/ivy-1.9.13.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.pom"/>
-				<caller organisation="org.apache.avro" name="avro" conf="compile, runtime" rev="1.9.13" rev-constraint-default="1.9.13" rev-constraint-dynamic="1.9.13" callerrev="1.7.7"/>
-				<caller organisation="org.apache.hadoop" name="hadoop-common" conf="compile, runtime" rev="1.8.8" rev-constraint-default="1.8.8" rev-constraint-dynamic="1.8.8" callerrev="2.2.0"/>
-				<caller organisation="org.apache.avro" name="avro-mapred" conf="compile, runtime" rev="1.9.13" rev-constraint-default="1.9.13" rev-constraint-dynamic="1.9.13" callerrev="1.7.7"/>
-				<caller organisation="org.apache.avro" name="avro-ipc" conf="compile, runtime" rev="1.9.13" rev-constraint-default="1.9.13" rev-constraint-dynamic="1.9.13" callerrev="1.7.7"/>
-				<caller organisation="org.apache.hadoop" name="hadoop-hdfs" conf="compile, runtime" rev="1.8.8" rev-constraint-default="1.8.8" rev-constraint-dynamic="1.8.8" callerrev="2.2.0"/>
-				<caller organisation="org.codehaus.jackson" name="jackson-mapper-asl" conf="compile, runtime" rev="1.9.13" rev-constraint-default="1.9.13" rev-constraint-dynamic="1.9.13" callerrev="1.9.13"/>
-				<artifacts>
-					<artifact name="jackson-core-asl" type="jar" ext="jar" status="no" details="" size="232248" time="0" location="/Users/SunJc/.ivy2/cache/org.codehaus.jackson/jackson-core-asl/jars/jackson-core-asl-1.9.13.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
 		<module organisation="commons-configuration" name="commons-configuration">
 			<revision name="1.6" status="release" pubdate="20090205034444" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/${pom.artifactId.substring(8)}/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="30">
 				<license name="The Apache Software License, Version 2.0" url="/LICENSE.txt"/>
@@ -1757,6 +1711,25 @@
 				</artifacts>
 			</revision>
 		</module>
+		<module organisation="org.apache.avro" name="avro">
+			<revision name="1.7.7" status="release" pubdate="20140719040856" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://avro.apache.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="4">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="11109" time="0" location="/Users/SunJc/.ivy2/cache/org.apache.avro/avro/ivy-1.7.7.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/avro/avro/1.7.7/avro-1.7.7.pom"/>
+				<caller organisation="org.apache.hadoop" name="hadoop-common" conf="compile, runtime" rev="1.7.4" rev-constraint-default="1.7.4" rev-constraint-dynamic="1.7.4" callerrev="2.2.0"/>
+				<caller organisation="org.apache.avro" name="avro-ipc" conf="compile, runtime" rev="1.7.7" rev-constraint-default="1.7.7" rev-constraint-dynamic="1.7.7" callerrev="1.7.7"/>
+				<artifacts>
+					<artifact name="avro" type="jar" ext="jar" status="no" details="" size="436303" time="0" location="/Users/SunJc/.ivy2/cache/org.apache.avro/avro/jars/avro-1.7.7.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/avro/avro/1.7.7/avro-1.7.7.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="1.7.4" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="1.7.7"/>
+				<caller organisation="org.apache.hadoop" name="hadoop-common" conf="compile, runtime" rev="1.7.4" rev-constraint-default="1.7.4" rev-constraint-dynamic="1.7.4" callerrev="2.2.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="org.apache.commons" name="commons-compress">
 			<revision name="1.4.1" status="release" pubdate="20120522125732" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/compress/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="8">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
@@ -1807,6 +1780,30 @@
 					<artifact name="jackson-mapper-asl" type="jar" ext="jar" status="no" details="" size="780664" time="0" location="/Users/SunJc/.ivy2/cache/org.codehaus.jackson/jackson-mapper-asl/jars/jackson-mapper-asl-1.9.13.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar"/>
 					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.codehaus.jackson" name="jackson-core-asl">
+			<revision name="1.9.13" status="release" pubdate="20130715110730" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jackson.codehaus.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="5">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2564" time="0" location="/Users/SunJc/.ivy2/cache/org.codehaus.jackson/jackson-core-asl/ivy-1.9.13.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.pom"/>
+				<caller organisation="org.apache.avro" name="avro" conf="compile, runtime" rev="1.9.13" rev-constraint-default="1.9.13" rev-constraint-dynamic="1.9.13" callerrev="1.7.7"/>
+				<caller organisation="org.apache.hadoop" name="hadoop-common" conf="compile, runtime" rev="1.8.8" rev-constraint-default="1.8.8" rev-constraint-dynamic="1.8.8" callerrev="2.2.0"/>
+				<caller organisation="org.apache.avro" name="avro-mapred" conf="compile, runtime" rev="1.9.13" rev-constraint-default="1.9.13" rev-constraint-dynamic="1.9.13" callerrev="1.7.7"/>
+				<caller organisation="org.apache.avro" name="avro-ipc" conf="compile, runtime" rev="1.9.13" rev-constraint-default="1.9.13" rev-constraint-dynamic="1.9.13" callerrev="1.7.7"/>
+				<caller organisation="org.apache.hadoop" name="hadoop-hdfs" conf="compile, runtime" rev="1.8.8" rev-constraint-default="1.8.8" rev-constraint-dynamic="1.8.8" callerrev="2.2.0"/>
+				<caller organisation="org.codehaus.jackson" name="jackson-mapper-asl" conf="compile, runtime" rev="1.9.13" rev-constraint-default="1.9.13" rev-constraint-dynamic="1.9.13" callerrev="1.9.13"/>
+				<artifacts>
+					<artifact name="jackson-core-asl" type="jar" ext="jar" status="no" details="" size="232248" time="0" location="/Users/SunJc/.ivy2/cache/org.codehaus.jackson/jackson-core-asl/jars/jackson-core-asl-1.9.13.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="1.8.8" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="1.9.13"/>
+				<caller organisation="org.apache.hadoop" name="hadoop-common" conf="compile, runtime" rev="1.8.8" rev-constraint-default="1.8.8" rev-constraint-dynamic="1.8.8" callerrev="2.2.0"/>
+				<caller organisation="org.apache.hadoop" name="hadoop-hdfs" conf="compile, runtime" rev="1.8.8" rev-constraint-default="1.8.8" rev-constraint-dynamic="1.8.8" callerrev="2.2.0"/>
+				<artifacts>
 				</artifacts>
 			</revision>
 		</module>
