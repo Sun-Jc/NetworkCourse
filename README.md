@@ -8,8 +8,10 @@
 3. $ python3 csv2edges_undirected.py mergedEdges.csv
    $ python3 csv2nodes.py mergedNodes.csv
    
-   get mergedNodes.csv.txt and  mergedEdges.csv
+   get mergedNodes.csv.txt and  mergedEdges.csv.txt
    
 4. spark-shell: dblp-script.scala
    or
    spark-submit: xxxxx.jar
+   
+   get dblpRank.txt
