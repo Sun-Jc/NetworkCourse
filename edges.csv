@@ -1,0 +1,100 @@
+Source,Target,Type,Id,Label,Weight,Year,Title
+2,3,Undirected,0,journals/acta/GoodmanS83,1,1983,NP-complete Problems Simplified on Tree Schemas.
+7,8,Undirected,1,journals/acta/HuangL87,1,1987,The Derivation of Systolic Implementations of Programs.
+9,10,Undirected,2,journals/acta/FinkelC87,1,1988,Fifo Nets Without Order Deadlock.
+12,13,Undirected,3,journals/acta/BozapalidisFR12,1,2012,Equational weighted tree transformations.
+12,14,Undirected,4,journals/acta/BozapalidisFR12,1,2012,Equational weighted tree transformations.
+13,14,Undirected,5,journals/acta/BozapalidisFR12,1,2012,Equational weighted tree transformations.
+15,16,Undirected,6,journals/acta/KhomenkoKKV06,1,2006,Merged processes: a new condensed representation of Petri net behaviour.
+15,17,Undirected,7,journals/acta/KhomenkoKKV06,1,2006,Merged processes: a new condensed representation of Petri net behaviour.
+15,18,Undirected,8,journals/acta/KhomenkoKKV06,1,2006,Merged processes: a new condensed representation of Petri net behaviour.
+16,17,Undirected,9,journals/acta/KhomenkoKKV06,1,2006,Merged processes: a new condensed representation of Petri net behaviour.
+16,18,Undirected,10,journals/acta/KhomenkoKKV06,1,2006,Merged processes: a new condensed representation of Petri net behaviour.
+17,18,Undirected,11,journals/acta/KhomenkoKKV06,1,2006,Merged processes: a new condensed representation of Petri net behaviour.
+21,22,Undirected,12,journals/acta/CritchlowP91,1,1991,The Expressive Power of Delay Operators in SCCS.
+25,26,Undirected,13,journals/acta/CalzarossaIS86,1,1986,A Workload Model Representative of Static and Dynamic Characteristics.
+25,27,Undirected,14,journals/acta/CalzarossaIS86,1,1986,A Workload Model Representative of Static and Dynamic Characteristics.
+26,27,Undirected,15,journals/acta/CalzarossaIS86,1,1986,A Workload Model Representative of Static and Dynamic Characteristics.
+18,29,Undirected,16,journals/acta/VoglerS014,1,2014,Trace- and failure-based semantics for responsiveness.
+18,30,Undirected,17,journals/acta/VoglerS014,1,2014,Trace- and failure-based semantics for responsiveness.
+29,30,Undirected,18,journals/acta/VoglerS014,1,2014,Trace- and failure-based semantics for responsiveness.
+32,33,Undirected,19,journals/acta/HuT72,1,1972,Least Upper Bound on the Cost of Optimum Binary Search Trees.
+37,8,Undirected,20,journals/acta/GorlatchL00,1,2000,Abstraction and Performance in the Design of Parallel Programs: An Overview of the SAT Approach.
+40,41,Undirected,21,journals/acta/Csuhaj-VarjuM00,1,2000,Evolutionary Systems: A Language Generating Device Inspired by Evolving Communities of Cells.
+44,45,Undirected,22,journals/acta/EhrenfeuchtR74,1,1974,Nonterminals Versus Homomorphisms in Defining Languages for Some Classes of Rewriting Systems.
+47,48,Undirected,23,journals/acta/HanI89,1,1989,Time Lower Bounds for Parallel Sorting on a Mesh-Conected Processor Array.
+49,50,Undirected,24,journals/acta/AkyildizB89,1,1989,Computational Algorithms for Networks of Queues with Rejection Blocking.
+51,52,Undirected,25,journals/acta/ChenM95,1,1995,Compositional Refinements in Multiple Blackboard Systems.
+53,54,Undirected,26,journals/acta/GlabbeekGO15,1,2015,Special issue on "Combining Compositionality and Concurrency": part 1.
+53,55,Undirected,27,journals/acta/GlabbeekGO15,1,2015,Special issue on "Combining Compositionality and Concurrency": part 1.
+54,55,Undirected,28,journals/acta/GlabbeekGO15,1,2015,Special issue on "Combining Compositionality and Concurrency": part 1.
+58,59,Undirected,29,journals/acta/ChungES85,1,1985,Complete Problems for Space Bounded Subclasses of NP.
+58,60,Undirected,30,journals/acta/ChungES85,1,1985,Complete Problems for Space Bounded Subclasses of NP.
+59,60,Undirected,31,journals/acta/ChungES85,1,1985,Complete Problems for Space Bounded Subclasses of NP.
+61,62,Undirected,32,journals/acta/BulychevDLL14,1,2014,Efficient controller synthesis for a fragment of MTL
+61,63,Undirected,33,journals/acta/BulychevDLL14,1,2014,Efficient controller synthesis for a fragment of MTL
+61,64,Undirected,34,journals/acta/BulychevDLL14,1,2014,Efficient controller synthesis for a fragment of MTL
+62,63,Undirected,35,journals/acta/BulychevDLL14,1,2014,Efficient controller synthesis for a fragment of MTL
+62,64,Undirected,36,journals/acta/BulychevDLL14,1,2014,Efficient controller synthesis for a fragment of MTL
+63,64,Undirected,37,journals/acta/BulychevDLL14,1,2014,Efficient controller synthesis for a fragment of MTL
+65,66,Undirected,38,journals/acta/BuddA82,1,1982,Two Notions of Correctness and Their Relation to Testing.
+70,71,Undirected,39,journals/acta/AmerinsBW93,1,1993,On Efficient Entreeings.
+70,72,Undirected,40,journals/acta/AmerinsBW93,1,1993,On Efficient Entreeings.
+71,72,Undirected,41,journals/acta/AmerinsBW93,1,1993,On Efficient Entreeings.
+74,75,Undirected,42,journals/acta/CulikD97,1,1997,Implementing Daubechies Wavelet Transform with Weighted Finite Automata.
+76,77,Undirected,43,journals/acta/CremersH78a,1,1978,Functional Behavior in Data Spaces.
+79,80,Undirected,44,journals/acta/CousotC87,1,1987,Sometime = Always + Recursion = Always on the Equivalence of the Intermittent and Invariant Assertions Methods for Proving Inevitability Properties of Programs.
+81,82,Undirected,45,journals/acta/MitraniH77,1,1977,Complete Parameterized Families of Job Scheduling Strategies.
+83,84,Undirected,46,journals/acta/MorrisT08,1,2008,Modelling higher-order dual nondeterminacy.
+88,89,Undirected,47,journals/acta/EngelfrietHL94,1,1994,Context-Free Graph Languages of Bounded Degree are Generated by Apex Graph Grammars.
+88,90,Undirected,48,journals/acta/EngelfrietHL94,1,1994,Context-Free Graph Languages of Bounded Degree are Generated by Apex Graph Grammars.
+89,90,Undirected,49,journals/acta/EngelfrietHL94,1,1994,Context-Free Graph Languages of Bounded Degree are Generated by Apex Graph Grammars.
+91,92,Undirected,50,journals/acta/ChowdhuryS87,1,1987,Worst Case Performance of Weighted Buddy Systems.
+93,94,Undirected,51,journals/acta/MontanariR95,1,1995,Contextual Nets.
+95,96,Undirected,52,journals/acta/LauerTS79,1,1979,COSY - A System Specification Language Based on Paths and Processes.
+95,97,Undirected,53,journals/acta/LauerTS79,1,1979,COSY - A System Specification Language Based on Paths and Processes.
+96,97,Undirected,54,journals/acta/LauerTS79,1,1979,COSY - A System Specification Language Based on Paths and Processes.
+100,101,Undirected,55,journals/acta/LippsMOW88,1,1988,Attribute (Re)evaluation in OPTRAN.
+100,102,Undirected,56,journals/acta/LippsMOW88,1,1988,Attribute (Re)evaluation in OPTRAN.
+100,103,Undirected,57,journals/acta/LippsMOW88,1,1988,Attribute (Re)evaluation in OPTRAN.
+101,102,Undirected,58,journals/acta/LippsMOW88,1,1988,Attribute (Re)evaluation in OPTRAN.
+101,103,Undirected,59,journals/acta/LippsMOW88,1,1988,Attribute (Re)evaluation in OPTRAN.
+102,103,Undirected,60,journals/acta/LippsMOW88,1,1988,Attribute (Re)evaluation in OPTRAN.
+104,105,Undirected,61,journals/acta/RajasekaranS92,1,1992,On Parallel Integer Sorting.
+106,107,Undirected,62,journals/acta/HullS94,1,1994,Domain Independence and the Relational Calculus.
+108,109,Undirected,63,journals/acta/LeeF96,1,1996,Multi-Granularity Locking for Nested Transactions: A Proof Using a Possibilities Mapping.
+111,112,Undirected,64,journals/acta/LeavensP00,1,2000,A Complete Algebraic Characterization of Behavioral Subtyping.
+114,115,Undirected,65,journals/acta/LiangC97,1,1997,Minimum Feedback Vertex Sets in Cocomparability Graphs and Convex Bipartite Graphs.
+116,117,Undirected,66,journals/acta/BernotBK94,1,1994,Behavioural Approaches to Algebraic Specifications: A Comparative Study.
+116,118,Undirected,67,journals/acta/BernotBK94,1,1994,Behavioural Approaches to Algebraic Specifications: A Comparative Study.
+117,118,Undirected,68,journals/acta/BernotBK94,1,1994,Behavioural Approaches to Algebraic Specifications: A Comparative Study.
+119,120,Undirected,69,journals/acta/BergstraM12,1,2012,Instruction sequence processing operators.
+15,122,Undirected,70,journals/acta/KhomenkoSVW09,1,2009,STG decomposition strategies in combination with unfolding.
+15,18,Undirected,71,journals/acta/KhomenkoSVW09,1,2009,STG decomposition strategies in combination with unfolding.
+15,123,Undirected,72,journals/acta/KhomenkoSVW09,1,2009,STG decomposition strategies in combination with unfolding.
+122,18,Undirected,73,journals/acta/KhomenkoSVW09,1,2009,STG decomposition strategies in combination with unfolding.
+122,123,Undirected,74,journals/acta/KhomenkoSVW09,1,2009,STG decomposition strategies in combination with unfolding.
+18,123,Undirected,75,journals/acta/KhomenkoSVW09,1,2009,STG decomposition strategies in combination with unfolding.
+124,125,Undirected,76,journals/acta/FinkelB74,1,1974,Quad Trees: A Data Structure for Retrieval on Composite Keys.
+127,128,Undirected,77,journals/acta/LabetoulleP76,1,1976,A Study of Queueing Networks with Deterministic Service and Application to Computer Networks.
+132,133,Undirected,78,journals/acta/HanKS16,1,2016,State complexity of deletion and bipolar deletion.
+132,134,Undirected,79,journals/acta/HanKS16,1,2016,State complexity of deletion and bipolar deletion.
+133,134,Undirected,80,journals/acta/HanKS16,1,2016,State complexity of deletion and bipolar deletion.
+136,137,Undirected,81,journals/acta/NagyO13,1,2013,Deterministic pushdown-CD-systems of stateless deterministic R(1)-automata.
+88,142,Undirected,82,journals/acta/EngelfrietV88,1,1988,High Level Tree Transducers and Iterated Pushdown Tree Transducers.
+143,144,Undirected,83,journals/acta/FanHSC10,1,2010,A note on autodense related languages.
+143,145,Undirected,84,journals/acta/FanHSC10,1,2010,A note on autodense related languages.
+143,146,Undirected,85,journals/acta/FanHSC10,1,2010,A note on autodense related languages.
+144,145,Undirected,86,journals/acta/FanHSC10,1,2010,A note on autodense related languages.
+144,146,Undirected,87,journals/acta/FanHSC10,1,2010,A note on autodense related languages.
+145,146,Undirected,88,journals/acta/FanHSC10,1,2010,A note on autodense related languages.
+147,148,Undirected,89,journals/acta/PanA06,1,2006,Solving HPP and SAT by P Systems with Active Membranes and Separation Rules.
+149,150,Undirected,90,journals/acta/KumarM96,1,1996,Optimizing the Costs of Hierarchical Quorum Consensus.
+151,152,Undirected,91,journals/acta/HaddadP07,1,2007,Recursive Petri nets.
+153,154,Undirected,92,journals/acta/GaverH76,1,1976,Multitype Multiprogramming Models.
+156,157,Undirected,93,journals/acta/KonstantinidisSY07,1,2007,Representation and uniformization of algebraic transductions.
+156,158,Undirected,94,journals/acta/KonstantinidisSY07,1,2007,Representation and uniformization of algebraic transductions.
+157,158,Undirected,95,journals/acta/KonstantinidisSY07,1,2007,Representation and uniformization of algebraic transductions.
+159,160,Undirected,96,journals/acta/BestDKP91,1,1991,Concurrent Bisimulations in Petri Nets.
+159,161,Undirected,97,journals/acta/BestDKP91,1,1991,Concurrent Bisimulations in Petri Nets.
+159,162,Undirected,98,journals/acta/BestDKP91,1,1991,Concurrent Bisimulations in Petri Nets.
