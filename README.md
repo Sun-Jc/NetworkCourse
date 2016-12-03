@@ -1,8 +1,9 @@
 # NetworkCourse
 
-1. filter on edges.csv [TODO]
-
-2. $ java -jar merge.jar edgesFiltered.csv nodesFiltered.csv
+1. $ python3 filter.py edges.csv 2000
+    get edges_2000.csv
+    
+2. $ java -jar merge.jar edges_2000.csv nodes.csv
 
 3. $ python3 csv2edges_undirected.py mergedEdges.csv
    $ python3 csv2nodes.py mergedNodes.csv
