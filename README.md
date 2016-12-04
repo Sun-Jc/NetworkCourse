@@ -25,7 +25,7 @@
 
 # Analysis
 
-Working function: 
+Working functions: 
 
 1. diameter and nodes of each connect component
 
@@ -34,6 +34,6 @@ Working function:
 3. pageRank of each node
 
 
-Todo:
+TODOs:
 
 4. clusting coefficient
