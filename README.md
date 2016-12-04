@@ -1,5 +1,7 @@
 # NetworkCourse
 
+# Procedures
+
 1. $ python3 filter.py edges.csv 2000 
 
     get edges_2000.csv
@@ -19,3 +21,19 @@
    spark-submit: xxxxx.jar
    
    get dblpRank.txt
+   
+
+# Analysis
+
+Working function: 
+
+1. diameter and nodes of each connect component
+
+2. average shortest path, excluding infinities
+
+3. pageRank of each node
+
+
+Todo:
+
+4. clusting coefficient
