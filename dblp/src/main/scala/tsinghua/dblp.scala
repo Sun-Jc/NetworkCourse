@@ -38,11 +38,24 @@ object Dblp{
       val diameters = CCs.map( DiameterApproximation.run(_))
 
       // print diameters
-      val file1 = new File(whereami + "/data/graphx/dblpDiameters.txt")
-      val bw1 = new BufferedWriter(new FileWriter(file1))
-      bw1.write("diameter,one node of the connected component\n")
-      bw1.write(diameters.zip(CCs.map(_.vertices.min)).mkString("\n"))
-      bw1.close()
+      var file = new File(whereami + "/data/graphx/dblpDiameters.txt")
+      var bw = new BufferedWriter(new FileWriter(file))
+      bw.write("diameter\t nodesOfTheConnectedComponent\n")
+      bw write diameters.zip(CCs.map(x=> (x.vertices.map{case (_1,_2) =>_1 })).toList).map{case(x,y) => "" + x + "\t"+y.collect.mkString("\t")}.toList.mkString("\n")
+      bw.close()
+
+      // compute avg shortest path length
+      val (spls,num) = CCs.map(x=> ShortestPaths.run(x, x.vertices.map{case (_1,_2) => _1 }.collect())).toList.
+            map(_.vertices.collect.toList.map{case (src,y) => y.toList.map{case (target,dist) => dist} }).
+            flatten.flatten.foldLeft((0.0,0))( (s,n) => (s._1 +n , s._2 + 1 ) ) 
+      val avgSPL = spls/num
+
+      // print average shortest path length, excluding infinity
+      file = new File(whereami + "/data/graphx/dblpAvgSpl.txt")
+      bw = new BufferedWriter(new FileWriter(file))
+      bw write avgSPL.toString
+      bw.close()
+
 
       // Run PageRank
       val ranks = graph.pageRank(0.0001).vertices
@@ -51,9 +64,9 @@ object Dblp{
       val ranksByPersonname = persons.join(ranks).map { case (id, (personName, rank)) => (personName, rank) }
 
       // Print the result
-      val file2 = new File(whereami + "/data/graphx/dblpRanks.txt")
-      val bw2 = new BufferedWriter(new FileWriter(file2))
-      bw2.write(ranksByPersonname.collect().mkString("\n"))
-      bw2.close()
+      file = new File(whereami + "/data/graphx/dblpRanks.txt")
+      bw = new BufferedWriter(new FileWriter(file))
+      bw.write(ranksByPersonname.collect().mkString("\n"))
+      bw.close()
     }
   }
