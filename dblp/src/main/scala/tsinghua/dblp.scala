@@ -25,7 +25,7 @@ object Dblp{
 
       val edgeFile = "data/graphx/mergedEdges.txt"
       val nodeFile = "data/graphx/mergedNodes.txt"
-      //val edgeFile = "data/graphx/followers.txt"
+      //val edgeFile = "data/graphx/simple.txt"
       //val nodeFile = "data/graphx/users.txt"
 
       // Load the edges as a graph
@@ -48,7 +48,7 @@ object Dblp{
       val (spls,num) = CCs.map(x=> ShortestPaths.run(x, x.vertices.map{case (_1,_2) => _1 }.collect())).toList.
             map(_.vertices.collect.toList.map{case (src,y) => y.toList.map{case (target,dist) => dist} }).
             flatten.flatten.foldLeft((0.0,0))( (s,n) => (s._1 +n , s._2 + 1 ) ) 
-      val avgSPL = spls/num
+      val avgSPL = spls/(num-graph.vertices.count)
 
       // print average shortest path length, excluding infinity
       file = new File(whereami + "/data/graphx/dblpAvgSpl.txt")
