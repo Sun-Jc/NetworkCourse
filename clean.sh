@@ -1,0 +1,1 @@
+rm data/graphx/dblp*.txt

@@ -3,6 +3,8 @@ import org.apache.spark._
 import org.apache.spark.SparkContext._
 import org.apache.spark.SparkConf
 import org.apache.spark.graphx._
+import org.apache.spark.graphx.lib._
+
 import java.io._
 import it.unipd.dei.graphx.diameter.DiameterApproximation
 
@@ -11,6 +13,8 @@ import it.unipd.dei.graphx.diameter.DiameterApproximation
 
 object Dblp{
   def main(args: Array[String]) {
+
+      val DEBUG = 0
 
       val master = "spark://Macintosh-2.local:7077"
       val folder = "/Users/SunJc/Downloads/spark-2.0.2-bin-hadoop2.7"
@@ -23,10 +27,13 @@ object Dblp{
       // begin script
       val whereami = System.getProperty("user.dir")
 
-      val edgeFile = "data/graphx/mergedEdges.txt"
-      val nodeFile = "data/graphx/mergedNodes.txt"
-      //val edgeFile = "data/graphx/simple.txt"
-      //val nodeFile = "data/graphx/users.txt"
+      var edgeFile = "data/graphx/mergedEdges.txt"
+      var nodeFile = "data/graphx/mergedNodes.txt"
+
+      if (DEBUG != 0){
+            edgeFile = "data/graphx/simple.txt"
+            nodeFile = "data/graphx/users.txt"
+      }
 
       // Load the edges as a graph
       val graph = GraphLoader.edgeListFile(sc, edgeFile)
@@ -40,15 +47,36 @@ object Dblp{
       // print diameters
       var file = new File(whereami + "/data/graphx/dblpDiameters.txt")
       var bw = new BufferedWriter(new FileWriter(file))
-      bw.write("diameter\t nodesOfTheConnectedComponent\n")
-      bw write diameters.zip(CCs.map(x=> (x.vertices.map{case (_1,_2) =>_1 })).toList).map{case(x,y) => "" + x + "\t"+y.collect.mkString("\t")}.toList.mkString("\n")
+      bw.write("diameter,nodesOfTheConnectedComponent\n")
+      bw write diameters.zip(CCs.map(x=> (x.vertices.map{case (_1,_2) =>_1 })).toList).map{case(x,y) => "" + x + ","+y.collect.mkString(",")}.toList.mkString("\n")
       bw.close()
 
       // write degrees(undirected graph, inDegree as degree)
+      val degrees = graph.outDegrees
       file = new File(whereami + "/data/graphx/dblpDegrees.txt")
       bw = new BufferedWriter(new FileWriter(file))
-      bw write "vertex,degree"
-      bw write graph.outDegrees.collect().map{case (v,d) => f"$v%s,$d%s"}.mkString("\n")
+      bw write "vertex,degree\n"
+      bw write degrees.collect().map{case (v,d) => f"$v%s,$d%s"}.mkString("\n")
+      bw.close()
+
+      // compute cluster coefficient
+      val neighbors = graph.collectNeighborIds(EdgeDirection.In)
+      val nMap = neighbors.collectAsMap
+      val clusterCoeff = neighbors.map{case (v,n) => v -> n.map( n1 => n.filter( n2 => n2 != n1).map( n2 => nMap.get(n1).getOrElse(Array()).filter( n3 =>n2 ==  n3 ) )).flatten.flatten.length}.
+            join(graph.outDegrees).map{case (v,(l,1)) => v -> 0.0 ; case (v,(l,n)) => v -> (l + 0.0) / (n*(n-1))}
+
+      // print cluster coefficient
+      file = new File(whereami + "/data/graphx/dblpClusterCoeffient.txt")
+      bw = new BufferedWriter(new FileWriter(file))
+      bw write "vertex,clusterCoeffient\n"
+      bw write clusterCoeff.collect().map{case (v,c) => f"$v%s,$c%f"}.mkString("\n")
+      bw.close()
+
+      // print average cluster coefficient
+      file = new File(whereami + "/data/graphx/dblpAvgClusterCoeffient.txt")
+      bw = new BufferedWriter(new FileWriter(file))
+      val (totalC,n) = clusterCoeff.collect().map{case (v,c) => c}.foldLeft((0.0,0))( (s,n) => (s._1 +n , s._2 + 1 ) ) 
+      bw write (totalC/n).toString
       bw.close()
 
       // compute avg shortest path length
@@ -72,6 +100,7 @@ object Dblp{
       // Print the result
       file = new File(whereami + "/data/graphx/dblpRanks.txt")
       bw = new BufferedWriter(new FileWriter(file))
+      bw write "vertex,pageRank\n"
       bw.write(ranksByPersonname.collect().mkString("\n"))
       bw.close()
     }

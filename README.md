@@ -22,6 +22,8 @@
    
    get dblpRank.txt
    
+   (clean: ./clean.sh)
+   
 5. draw histgram of degree distribution
  
   $python3 degreeHist.py dblpDegrees.txt #bins
@@ -39,7 +41,9 @@ Working functions:
 
 4. degree distribution
 
+5. clustering coefficient
+
 
 TODOs:
 
-5. clusting coefficient
+6. Assortativity
