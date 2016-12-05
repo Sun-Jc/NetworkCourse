@@ -37,7 +37,9 @@ Working functions:
 
 3. pageRank of each node
 
+4. degree distribution
+
 
 TODOs:
 
-4. clusting coefficient
+5. clusting coefficient
