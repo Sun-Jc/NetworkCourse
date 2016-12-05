@@ -1,5 +1,7 @@
 # NetworkCourse
 
+# Procedures
+
 1. $ python3 filter.py edges.csv 2000 
 
     get edges_2000.csv
@@ -20,7 +22,22 @@
    
    get dblpRank.txt
    
+ 5. draw histgram of degree distribution
+ 
+  $python3 degreeHist.py dblpDegrees.txt #bins
+   
 
-5. draw degree histgram
+# Analysis
 
- $python3 degreeHist.py dblpDegrees.txt #bins
+Working functions: 
+
+1. diameter and nodes of each connect component
+
+2. average shortest path, excluding infinities
+
+3. pageRank of each node
+
+
+TODOs:
+
+4. clusting coefficient
