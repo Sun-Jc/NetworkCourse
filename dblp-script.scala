@@ -90,7 +90,7 @@ val M = edges.collect.length
 val M_1 = 1.0 / M
 // asscio coeffcient = ( M^-1 * c - (M^-1 * 0.5 * a)^2 ) / ( M^-1 * 0.5 * b - (M^-1 * 0.5 * a)^2 )
 val D = (M_1 * 0.5 * a) * (M_1 * 0.5 * a)
-val ac = (M_1 * c - D) / ( M_1 * 0.5 * b)
+val ac = (M_1 * c - D) / ( M_1 * 0.5 * b - D)
 
 // print asscociative coeffcient
 file = new File(whereami + "/data/graphx/dblpAsscociativeCoefficien.txt")
