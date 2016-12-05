@@ -14,8 +14,6 @@ import it.unipd.dei.graphx.diameter.DiameterApproximation
 object Dblp{
   def main(args: Array[String]) {
 
-      val DEBUG = 0
-
       val master = "spark://Macintosh-2.local:7077"
       val folder = "/Users/SunJc/Downloads/spark-2.0.2-bin-hadoop2.7"
 
@@ -25,6 +23,8 @@ object Dblp{
       sc.addJar(folder+"/simple-project_2.11-1.0.jar")
 
       // begin script
+      val DEBUG = 0
+
       val whereami = System.getProperty("user.dir")
 
       var edgeFile = "data/graphx/mergedEdges.txt"
@@ -89,6 +89,24 @@ object Dblp{
       file = new File(whereami + "/data/graphx/dblpAvgSpl.txt")
       bw = new BufferedWriter(new FileWriter(file))
       bw write avgSPL.toString
+      bw.close()
+
+
+      // compute asscociative coeffcient
+      val degreesMap = graph.outDegrees.collectAsMap
+      val edges = graph.edges.map{case Edge(s,t,w) => s->t}
+      val edgeDegrees = edges map {case (s,t) => degreesMap.get(s).getOrElse(-100000000) -> degreesMap.get(t).getOrElse(-100000000)}
+      val (a,b,c) = edgeDegrees.collect.toList.foldLeft( (0.0,0.0,0.0) ) { case ((h1,h2,h3),(j,k)) => ( (h1 + j + k) , (h2 + j * j + k * k) , (h3+ (j+0.0) * k)) }
+      val M = edges.collect.length
+      val M_1 = 1.0 / M
+      // asscio coeffcient = ( M^-1 * c - (M^-1 * 0.5 * a)^2 ) / ( M^-1 * 0.5 * b - (M^-1 * 0.5 * a)^2 )
+      val D = (M_1 * 0.5 * a) * (M_1 * 0.5 * a)
+      val ac = (M_1 * c - D) / ( M_1 * 0.5 * b)
+
+      // print asscociative coeffcient
+      file = new File(whereami + "/data/graphx/dblpAsscociativeCoefficien.txt")
+      bw = new BufferedWriter(new FileWriter(file))
+      bw write ac.toString
       bw.close()
 
       // Run PageRank

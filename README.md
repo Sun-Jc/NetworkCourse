@@ -43,7 +43,8 @@ Working functions:
 
 5. clustering coefficient
 
+6. assortative coefficient
 
 TODOs:
 
-6. Assortativity
+caching and streamlining
