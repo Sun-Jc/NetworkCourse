@@ -44,6 +44,13 @@ object Dblp{
       bw write diameters.zip(CCs.map(x=> (x.vertices.map{case (_1,_2) =>_1 })).toList).map{case(x,y) => "" + x + "\t"+y.collect.mkString("\t")}.toList.mkString("\n")
       bw.close()
 
+      // write degrees(undirected graph, inDegree as degree)
+      file = new File(whereami + "/data/graphx/dblpDegrees.txt")
+      bw = new BufferedWriter(new FileWriter(file))
+      bw write "vertex,degree"
+      bw write graph.outDegrees.collect().map{case (v,d) => f"$v%s,$d%s"}.mkString("\n")
+      bw.close()
+
       // compute avg shortest path length
       val (spls,num) = CCs.map(x=> ShortestPaths.run(x, x.vertices.map{case (_1,_2) => _1 }.collect())).toList.
             map(_.vertices.collect.toList.map{case (src,y) => y.toList.map{case (target,dist) => dist} }).
@@ -56,12 +63,11 @@ object Dblp{
       bw write avgSPL.toString
       bw.close()
 
-
       // Run PageRank
       val ranks = graph.pageRank(0.0001).vertices
       // Join the ranks with the usernames
       val persons = sc.textFile(nodeFile).map { line => val fields = line.split(",") ;(fields(0).toLong, fields(1)) }
-      val ranksByPersonname = persons.join(ranks).map { case (id, (personName, rank)) => (personName, rank) }
+      val ranksByPersonname = persons.join(ranks).map { case (id, (personName, rank)) => f"$personName%s,$rank%s" }
 
       // Print the result
       file = new File(whereami + "/data/graphx/dblpRanks.txt")

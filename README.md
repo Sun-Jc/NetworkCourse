@@ -19,3 +19,8 @@
    spark-submit: xxxxx.jar
    
    get dblpRank.txt
+   
+
+5. draw degree histgram
+
+ $python3 degreeHist.py dblpDegrees.txt #bins
