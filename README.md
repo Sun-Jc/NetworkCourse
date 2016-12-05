@@ -22,7 +22,7 @@
    
    get dblpRank.txt
    
- 5. draw histgram of degree distribution
+5. draw histgram of degree distribution
  
   $python3 degreeHist.py dblpDegrees.txt #bins
    
