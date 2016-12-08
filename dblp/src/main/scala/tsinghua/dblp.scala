@@ -28,9 +28,6 @@ object Dblp{
       val whereami = System.getProperty("user.dir")
 
 
-
-     
-
       if (DEBUG != 0){
             val resDir = whereami + "/data/graphx/sample"
             deblpAnalysis(resDir)
@@ -82,14 +79,14 @@ object Dblp{
             join(graph.outDegrees).map{case (v,(l,1)) => v -> 0.0 ; case (v,(l,n)) => v -> (l + 0.0) / (n*(n-1))}
 
       // print cluster coefficient
-      file = new File(res + "/dblpClusterCoeffient.txt")
+      file = new File(resDir + "/dblpClusterCoeffient.txt")
       bw = new BufferedWriter(new FileWriter(file))
       bw write "vertex,clusterCoeffient\n"
       bw write clusterCoeff.collect().map{case (v,c) => f"$v%s,$c%f"}.mkString("\n")
       bw.close()
 
       // print average cluster coefficient
-      file = new File(res + "/dblpAvgClusterCoeffient.txt")
+      file = new File(resDir + "/dblpAvgClusterCoeffient.txt")
       bw = new BufferedWriter(new FileWriter(file))
       val (totalC,n) = clusterCoeff.collect().map{case (v,c) => c}.foldLeft((0.0,0))( (s,n) => (s._1 +n , s._2 + 1 ) ) 
       bw write (totalC/n).toString
@@ -102,7 +99,7 @@ object Dblp{
       val avgSPL = spls/(num-graph.vertices.count)
 
       // print average shortest path length, excluding infinity
-      file = new File(res + "/dblpAvgSpl.txt")
+      file = new File(resDir + "/dblpAvgSpl.txt")
       bw = new BufferedWriter(new FileWriter(file))
       bw write avgSPL.toString
       bw.close()
@@ -120,7 +117,7 @@ object Dblp{
       val ac = (M_1 * c - D) / ( M_1 * 0.5 * b - D)
 
       // print asscociative coeffcient
-      file = new File(res + "/dblpAsscociativeCoefficien.txt")
+      file = new File(resDir + "/dblpAsscociativeCoefficien.txt")
       bw = new BufferedWriter(new FileWriter(file))
       bw write ac.toString
       bw.close()
@@ -132,7 +129,7 @@ object Dblp{
       val ranksByPersonname = persons.join(ranks).map { case (id, (personName, rank)) => f"$personName%s,$rank%s" }
 
       // Print the result
-      file = new File(res + "/dblpRanks.txt")
+      file = new File(resDir + "/dblpRanks.txt")
       bw = new BufferedWriter(new FileWriter(file))
       bw write "vertex,pageRank\n"
       bw.write(ranksByPersonname.collect().mkString("\n"))
