@@ -33,6 +33,7 @@ graph.cache()
 
 // compute diameter
 val graphWithCC = graph.mapEdges(x=>1.0).connectedComponents()
+graphWithCC.cache()
 val ccID = graphWithCC.vertices.map{case (_,x)=>x}.distinct
 val CCs = ccID.collect.toList.map{ case id => id -> graphWithCC.subgraph( (_=>true) , (_,x)=> x==id ) } // no nesting rdd
 val diameters = CCs.map{case (id,sg) => id -> DiameterApproximation.run(sg)}
