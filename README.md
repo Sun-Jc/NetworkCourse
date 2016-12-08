@@ -45,6 +45,8 @@ Working functions:
 
 6. assortative coefficient
 
+streamlined and cached
+
 TODOs:
 
-caching and streamlining
+Evolving analysis.
