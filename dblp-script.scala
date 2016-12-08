@@ -10,7 +10,9 @@ import it.unipd.dei.graphx.diameter.DiameterApproximation
 
 val DEBUG = 1
 
-val whereami = System.getProperty("user.dir")
+var whereami = System.getProperty("user.dir")
+
+whereami = whereami + "/evolving" 
 
 var edgeFile = "data/graphx/mergedEdges.txt"
 var nodeFile = "data/graphx/mergedNodes.txt"

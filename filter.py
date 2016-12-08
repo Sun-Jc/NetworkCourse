@@ -19,7 +19,7 @@ with open(options.filename) as f:
 			break
 		else:
 			l = l.split(',')
-			if int(l[6]) >= options.year:
+			if int(l[6]) <= options.year:
 				l = ','.join(l)
 				wf.write(l)
 f.close()

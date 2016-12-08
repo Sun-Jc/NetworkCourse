@@ -27,13 +27,29 @@ object Dblp{
 
       val whereami = System.getProperty("user.dir")
 
-      var edgeFile = "data/graphx/mergedEdges.txt"
-      var nodeFile = "data/graphx/mergedNodes.txt"
+
+
+     
 
       if (DEBUG != 0){
-            edgeFile = "data/graphx/simple.txt"
-            nodeFile = "data/graphx/users.txt"
+            val resDir = whereami + "/data/graphx/sample"
+            deblpAnalysis(resDir)
+
+      }else{
+            val d = new File(whereami+"/data/graphx/evolving")
+            val dir = d.listFiles.filter(_.isDirectory).toList
+            val dirs = sc.parallelize(dir)
+            dirs.foreach(d => deblpAnalysis(d))
       }
+
+      
+    }
+
+    def deblpAnalysis(resultDir: string): Unit ={
+
+      //
+      val edgeFile = resultDir + "/mergedEdges.txt"
+      val nodeFile = resultDir + "/mergedNodes.txt"
 
       // Load the edges as a graph
       val graph = GraphLoader.edgeListFile(sc, edgeFile)
@@ -45,7 +61,7 @@ object Dblp{
       val diameters = CCs.map( DiameterApproximation.run(_))
 
       // print diameters
-      var file = new File(whereami + "/data/graphx/dblpDiameters.txt")
+      var file = new File(resultDir + "/dblpDiameters.txt")
       var bw = new BufferedWriter(new FileWriter(file))
       bw.write("diameter,nodesOfTheConnectedComponent\n")
       bw write diameters.zip(CCs.map(x=> (x.vertices.map{case (_1,_2) =>_1 })).toList).map{case(x,y) => "" + x + ","+y.collect.mkString(",")}.toList.mkString("\n")
@@ -53,7 +69,7 @@ object Dblp{
 
       // write degrees(undirected graph, inDegree as degree)
       val degrees = graph.outDegrees
-      file = new File(whereami + "/data/graphx/dblpDegrees.txt")
+      file = new File(resultDir + "/dblpDegrees.txt")
       bw = new BufferedWriter(new FileWriter(file))
       bw write "vertex,degree\n"
       bw write degrees.collect().map{case (v,d) => f"$v%s,$d%s"}.mkString("\n")
@@ -66,14 +82,14 @@ object Dblp{
             join(graph.outDegrees).map{case (v,(l,1)) => v -> 0.0 ; case (v,(l,n)) => v -> (l + 0.0) / (n*(n-1))}
 
       // print cluster coefficient
-      file = new File(whereami + "/data/graphx/dblpClusterCoeffient.txt")
+      file = new File(res + "/dblpClusterCoeffient.txt")
       bw = new BufferedWriter(new FileWriter(file))
       bw write "vertex,clusterCoeffient\n"
       bw write clusterCoeff.collect().map{case (v,c) => f"$v%s,$c%f"}.mkString("\n")
       bw.close()
 
       // print average cluster coefficient
-      file = new File(whereami + "/data/graphx/dblpAvgClusterCoeffient.txt")
+      file = new File(res + "/dblpAvgClusterCoeffient.txt")
       bw = new BufferedWriter(new FileWriter(file))
       val (totalC,n) = clusterCoeff.collect().map{case (v,c) => c}.foldLeft((0.0,0))( (s,n) => (s._1 +n , s._2 + 1 ) ) 
       bw write (totalC/n).toString
@@ -86,7 +102,7 @@ object Dblp{
       val avgSPL = spls/(num-graph.vertices.count)
 
       // print average shortest path length, excluding infinity
-      file = new File(whereami + "/data/graphx/dblpAvgSpl.txt")
+      file = new File(res + "/dblpAvgSpl.txt")
       bw = new BufferedWriter(new FileWriter(file))
       bw write avgSPL.toString
       bw.close()
@@ -104,7 +120,7 @@ object Dblp{
       val ac = (M_1 * c - D) / ( M_1 * 0.5 * b - D)
 
       // print asscociative coeffcient
-      file = new File(whereami + "/data/graphx/dblpAsscociativeCoefficien.txt")
+      file = new File(res + "/dblpAsscociativeCoefficien.txt")
       bw = new BufferedWriter(new FileWriter(file))
       bw write ac.toString
       bw.close()
@@ -116,7 +132,7 @@ object Dblp{
       val ranksByPersonname = persons.join(ranks).map { case (id, (personName, rank)) => f"$personName%s,$rank%s" }
 
       // Print the result
-      file = new File(whereami + "/data/graphx/dblpRanks.txt")
+      file = new File(res + "/dblpRanks.txt")
       bw = new BufferedWriter(new FileWriter(file))
       bw write "vertex,pageRank\n"
       bw.write(ranksByPersonname.collect().mkString("\n"))

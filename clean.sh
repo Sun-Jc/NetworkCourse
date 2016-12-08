@@ -1,1 +1,1 @@
-rm data/graphx/dblp*.txt
+rm data/graphx/evolving/*/dblp*.txt
