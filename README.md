@@ -1,5 +1,16 @@
 # NetworkCourse
 
+# Procedures(new)
+python3 edges.csv  2000 =====>  evolving/2000/edges.csv
+
+java -jar merge.jar evolving/2000/edges.csv nodes.csv evolving/2000/mergedEdges.csv evolving/2000/mergedNodes.csv =====> evolving/2000/mergedEdges.csv, evolving/2000/mergedNodes.csv
+
+python3 csv2edges_undirected.py evolving/2000/mergedEdges.csv evolving/2000/mergedEdges.txt =======>  evolving/2000/mergedEdges.txt
+
+python3 csv2nodes.py evolving/2000/mergedNodes.csv evolving/2000/mergedNodes.txt  =========>   evolving/2000/mergedNodes.txt
+
+python3 degreeHist.py evolving/2000/dblpDegrees.txt #bins evolving/2000/dblpDegrees.png
+
 # Procedures
 
 1. $ python3 filter.py edges.csv 2000 
