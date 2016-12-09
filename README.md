@@ -1,24 +1,22 @@
 # NetworkCourse
 
 # Procedures(evolving network)
-
-0. copy every file of "data-processing-script" folder into the same folder with edges.csv and nodes.csv
-
+0) copy every file of "data-processing-script" folder into the same folder with edges.csv and nodes.csv
 make sure your "$wc -l edges.csv " reveals ~15000000 lines
 
-1. $python3 1.run.py
+1) $python3 1.run.py
 
 every network generated inside evolving folder
 
-2. spark-submit: xxxxx.jar
+2) spark-submit: xxxxx.jar
 
 get network-analysis results
 
-3. $python3 3.run-degreeeHist.py 200
+3) $python3 3.run-degreeeHist.py 200
 
 get distribution of degrees
 
-4. if you need to clean-up the network data, run $
+4) if you need to clean-up the network data, run $
 
 # Procedures(one network)
 
