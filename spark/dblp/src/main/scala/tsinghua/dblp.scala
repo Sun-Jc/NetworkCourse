@@ -12,8 +12,10 @@ import it.unipd.dei.graphx.diameter.DiameterApproximation
 object Dblp{
   def main(args: Array[String]) {
 
-      val master = "spark://Macintosh-2.local:7077"
-      val folder = "/Users/SunJc/Downloads/spark-2.0.2-bin-hadoop2.7"
+      val master = "spark://localhost:7077"
+      val folder = "/data/guojianbo/spark-2.0.2-bin-hadoop2.7"
+      //val master = "spark://Macintosh-2.local:7077"
+      //val folder = "/Users/SunJc/Downloads/spark-2.0.2-bin-hadoop2.7"
 
       val sc = new SparkContext(master, "analysis",
       System.getenv("SPARK_HOME"), Seq(System.getenv("SPARK_TEST_JAR")))
@@ -27,19 +29,19 @@ object Dblp{
 
       if (DEBUG != 0){
             val resDir = whereami + "/data/graphx/sample"
-            deblpAnalysis(resDir)
+            deblpAnalysis(resDir,sc)
 
       }else{
             val d = new File(whereami+"/data/graphx/evolving")
-            val dir = d.listFiles.filter(_.isDirectory).toList
-            val dirs = sc.parallelize(dir)
-            dirs.foreach(d => deblpAnalysis(d))
+            val dir = d.listFiles.filter(_.isDirectory).map(_.toString).toList
+            val dirs = dir //sc.parallelize(dir)
+            dirs.foreach(d => deblpAnalysis(d,sc))
       }
 
 
     }
 
-    def deblpAnalysis(resultDir: string): Unit ={
+    def deblpAnalysis(resultDir: String,sc: SparkContext): Unit ={
 
       val edgeFile = resultDir + "/mergedEdges.txt"
       val nodeFile = resultDir + "/mergedNodes.txt"
@@ -106,7 +108,7 @@ object Dblp{
       bw write clusterCoeff.map{case (v,c) => c}.mean().toString
       bw.close()
 
-      // compute diameter
+      /*// compute diameter
       val graphWithCC = graph.mapEdges(x=>1.0).connectedComponents()
       graphWithCC.cache()
       val ccID = graphWithCC.vertices.map{case (_,x)=>x}.distinct
@@ -129,6 +131,6 @@ object Dblp{
       bw = new BufferedWriter(new FileWriter(file))
       bw write avgSPL.toString
       bw.close()
-
+      */
     }
   }
