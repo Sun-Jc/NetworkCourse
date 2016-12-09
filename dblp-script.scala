@@ -15,70 +15,23 @@ var whereami = System.getProperty("user.dir")
 var edgeFile = "data/graphx/mergedEdges.txt"
 var nodeFile = "data/graphx/mergedNodes.txt"
 
-if (DEBUG != 0){ edgeFile = "data/graphx/simple.txt";  nodeFile = "data/graphx/users.txt" }
+val resultDir = "data/graphx"
+edgeFile = resultDir + "/mergedEdges.txt"
+nodeFile = resultDir + "/mergedNodes.txt"
 
+if (DEBUG != 0){ edgeFile = "data/graphx/simple.txt";  nodeFile = "data/graphx/users.txt" }
 
 // Load the edges as a graph
 val graph = GraphLoader.edgeListFile(sc, edgeFile)
 
-/*// check loading and FILE system problem
-var flag = new File(whereami + "/data/graphx/read.txt")
-var bw1 = new BufferedWriter(new FileWriter(flag))
-bw1.write(f"graph $edgeFile%s successfully loaded")
-bw1.close()*/
-
-/** begin computing */
-
 graph.cache()
-
-// compute diameter
-val graphWithCC = graph.mapEdges(x=>1.0).connectedComponents()
-graphWithCC.cache()
-val ccID = graphWithCC.vertices.map{case (_,x)=>x}.distinct
-val CCs = ccID.collect.toList.map{ case id => id -> graphWithCC.subgraph( (_=>true) , (_,x)=> x==id ) } // no nesting rdd
-val diameters = CCs.map{case (id,sg) => id -> DiameterApproximation.run(sg)}
-
-// print diameters
-var file = new File(whereami + "/data/graphx/dblpDiameters.txt")
-var bw = new BufferedWriter(new FileWriter(file))
-bw.write("diameter,nodesOfTheConnectedComponent\n")
-bw write sc.parallelize(diameters).join( sc.parallelize( CCs.map{case(id,sg) => id -> sg.vertices.map(_._1).collect().mkString(",")})).map{ case( id, (d,vs) ) => "" + d + "," + vs }.collect.mkString("\n")
-bw.close()
 
 // write degrees(undirected graph, inDegree as degree)
 val degrees = graph.outDegrees
-file = new File(whereami + "/data/graphx/dblpDegrees.txt")
-bw = new BufferedWriter(new FileWriter(file))
+var file = new File(resultDir + "/dblpDegrees.txt")
+var bw = new BufferedWriter(new FileWriter(file))
 bw write "vertex,degree\n"
 bw write degrees.collect().map{case (v,d) => f"$v%s,$d%s"}.mkString("\n")
-bw.close()
-
-// compute cluster coefficient
-val neighbors = graph.collectNeighborIds(EdgeDirection.In)
-val nMap = neighbors.collectAsMap
-val clusterCoeff = neighbors.map{case (v,n) => v -> n.map( n1 => n.filter( n2 => n2 != n1).map( n2 => nMap.get(n1).getOrElse(Array()).filter( n3 =>n2 ==  n3 ) )).flatten.flatten.length}.
-join(graph.outDegrees).map{case (v,(l,1)) => v -> 0.0 ; case (v,(l,n)) => v -> (l + 0.0) / (n*(n-1))}
-
-// print cluster coefficient
-file = new File(whereami + "/data/graphx/dblpClusterCoeffient.txt")
-bw = new BufferedWriter(new FileWriter(file))
-bw write "vertex,clusterCoeffient\n"
-bw write clusterCoeff.collect().map{case (v,c) => f"$v%s,$c%f"}.mkString("\n")
-bw.close()
-
-// print average cluster coefficient
-file = new File(whereami + "/data/graphx/dblpAvgClusterCoeffient.txt")
-bw = new BufferedWriter(new FileWriter(file))
-bw write clusterCoeff.map{case (v,c) => c}.mean().toString
-bw.close()
-
-//compute avg shortest path length
-val avgSPL = sc.parallelize( CCs.map{case (id, x) => ShortestPaths.run(x, x.vertices.map{case (_1,_2) => _1 }.collect())}.map(_.vertices.collect.toList.map{case (src,y) => y.toList.map{case (target,dist) => dist}.filter(_>0) }). flatten.flatten).mean()
-
-// print average shortest path length, excluding infinity
-file = new File(whereami + "/data/graphx/dblpAvgSpl.txt")
-bw = new BufferedWriter(new FileWriter(file))
-bw write avgSPL.toString
 bw.close()
 
 // compute asscociative coeffcient
@@ -92,7 +45,7 @@ val D = (M_1 * 0.5 * a) * (M_1 * 0.5 * a)
 val ac = (M_1 * c - D) / ( M_1 * 0.5 * b - D)
 
 // print asscociative coeffcient
-file = new File(whereami + "/data/graphx/dblpAsscociativeCoefficien.txt")
+file = new File(resultDir + "/dblpAsscociativeCoefficien.txt")
 bw = new BufferedWriter(new FileWriter(file))
 bw write ac.toString
 bw.close()
@@ -103,9 +56,51 @@ val ranks = graph.pageRank(0.0001).vertices
 val persons = sc.textFile(nodeFile).map { line => val fields = line.split(",") ;(fields(0).toLong, fields(1)) }
 val ranksByPersonname = persons.join(ranks).map { case (id, (personName, rank)) => f"$personName%s,$rank%s" }
 
-// Print the result
-file = new File(whereami + "/data/graphx/dblpRanks.txt")
+// Print pagerank
+file = new File(resultDir + "/dblpRanks.txt")
 bw = new BufferedWriter(new FileWriter(file))
 bw write "vertex,pageRank\n"
 bw.write(ranksByPersonname.collect().mkString("\n"))
+bw.close()
+
+// compute cluster coefficient
+val neighbors = graph.collectNeighborIds(EdgeDirection.In)
+val nMap = neighbors.collectAsMap
+val clusterCoeff = neighbors.map{case (v,n) => v -> n.map( n1 => n.filter( n2 => n2 != n1).map( n2 => nMap.get(n1).getOrElse(Array()).filter( n3 =>n2 ==  n3 ) )).flatten.flatten.length}.join(graph.outDegrees).map{case (v,(l,1)) => v -> 0.0 ; case (v,(l,n)) => v -> (l + 0.0) / (n*(n-1))}
+
+// print cluster coefficient
+file = new File(resultDir + "/dblpClusterCoeffient.txt")
+bw = new BufferedWriter(new FileWriter(file))
+bw write "vertex,clusterCoeffient\n"
+bw write clusterCoeff.collect().map{case (v,c) => f"$v%s,$c%f"}.mkString("\n")
+bw.close()
+
+// print average cluster coefficient
+file = new File(resultDir + "/dblpAvgClusterCoeffient.txt")
+bw = new BufferedWriter(new FileWriter(file))
+bw write clusterCoeff.map{case (v,c) => c}.mean().toString
+bw.close()
+
+// compute diameter
+val graphWithCC = graph.mapEdges(x=>1.0).connectedComponents()
+graphWithCC.cache()
+val ccID = graphWithCC.vertices.map{case (_,x)=>x}.distinct
+val CCs = ccID.collect.toList.map{ case id => id -> graphWithCC.subgraph( (_=>true) , (_,x)=> x==id ) } // no nesting rdd
+graphWithCC.unpersist()
+val diameters = CCs.map{case (id,sg) => id -> DiameterApproximation.run(sg)}
+
+// print diameters
+file = new File(resultDir + "/dblpDiameters.txt")
+bw = new BufferedWriter(new FileWriter(file))
+bw.write("diameter,nodesOfTheConnectedComponent\n")
+bw write sc.parallelize(diameters).join( sc.parallelize( CCs.map{case(id,sg) => id -> sg.vertices.map(_._1).collect().mkString(",")})).map{ case( id, (d,vs) ) => "" + d + "," + vs }.collect.mkString("\n")
+bw.close()
+
+// compute avg shortest path length
+val avgSPL = sc.parallelize( CCs.map{case (id, x) => ShortestPaths.run(x, x.vertices.map{case (_1,_2) => _1 }.collect())}.map(_.vertices.collect.toList.map{case (src,y) => y.toList.map{case (target,dist) => dist}.filter(_>0) }). flatten.flatten).mean()
+
+// print average shortest path length, excluding infinity
+file = new File(resultDir + "/dblpAvgSpl.txt")
+bw = new BufferedWriter(new FileWriter(file))
+bw write avgSPL.toString
 bw.close()
