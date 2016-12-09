@@ -1,4 +1,5 @@
 import os
+from config import config
 from concurrent.futures import ProcessPoolExecutor, wait, as_completed
  
 def filterAndMerge(year):
@@ -8,11 +9,10 @@ def filterAndMerge(year):
     os.system('python3 csv2nodes.py evolving/{y}/mergedNodes.csv evolving/{y}/mergedNodes.txt'.format(y=year))
     print(year)
 
-numOfCores = 4
- 
+numOfCores = config.numOfCores
+years = config.years
+
 pool = ProcessPoolExecutor(numOfCores)
- 
-years = [1995, 2000, 2010]
 
 futures = []
 

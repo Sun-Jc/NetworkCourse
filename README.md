@@ -1,30 +1,35 @@
 # NetworkCourse
 
-# Procedures(new)
-python3 edges.csv  2000 =====>  evolving/2000/edges.csv
+# Procedures(evolving network)
 
-java -jar merge.jar evolving/2000/edges.csv nodes.csv evolving/2000/mergedEdges.csv evolving/2000/mergedNodes.csv =====> evolving/2000/mergedEdges.csv, evolving/2000/mergedNodes.csv
+0. copy every file of "data-processing-script" folder into the same folder with edges.csv and nodes.csv
 
-python3 csv2edges_undirected.py evolving/2000/mergedEdges.csv evolving/2000/mergedEdges.txt =======>  evolving/2000/mergedEdges.txt
+make sure your "$wc -l edges.csv " reveals ~15000000 lines
 
-python3 csv2nodes.py evolving/2000/mergedNodes.csv evolving/2000/mergedNodes.txt  =========>   evolving/2000/mergedNodes.txt
+1. $python3 1.run.py
 
-python3 degreeHist.py evolving/2000/dblpDegrees.txt #bins evolving/2000/dblpDegrees.png
+every network generated inside evolving folder
 
-# Procedures
+2. spark-submit: xxxxx.jar
 
-1. $ python3 filter.py edges.csv 2000 
+get network-analysis results
 
-    get edges_2000.csv
-    
-2. $ java -jar merge.jar edges_2000.csv nodes.csv
+3. $python3 3.run-degreeeHist.py 200
 
-3. $ python3 csv2edges_undirected.py mergedEdges.csv
+get distribution of degrees
 
-   $ python3 csv2nodes.py mergedNodes.csv
-   
-   get mergedNodes.csv.txt and  mergedEdges.csv.txt
-   
+4. if you need to clean-up the network data, run $
+
+# Procedures(one network)
+
+1. $ python3 -f edges.csv -y 2000 =====>  evolving/2000/edges.csv
+
+2. $ java -jar merge.jar evolving/2000/edges.csv nodes.csv evolving/2000/mergedEdges.csv evolving/2000/mergedNodes.csv =====> evolving/2000/mergedEdges.csv, evolving/2000/mergedNodes.csv
+
+3. $ python3 csv2edges_undirected.py evolving/2000/mergedEdges.csv evolving/2000/mergedEdges.txt =======>  evolving/2000/mergedEdges.txt
+
+$ python3 csv2nodes.py evolving/2000/mergedNodes.csv evolving/2000/mergedNodes.txt  =========>   evolving/2000/mergedNodes.txt
+
 4. spark-shell: dblp-script.scala
    
    or
@@ -33,12 +38,10 @@ python3 degreeHist.py evolving/2000/dblpDegrees.txt #bins evolving/2000/dblpDegr
    
    get dblpRank.txt
    
-   (clean: ./clean.sh)
-   
 5. draw histgram of degree distribution
  
-  $python3 degreeHist.py dblpDegrees.txt #bins
-   
+  $python3 degreeHist.py evolving/2000/dblpDegrees.txt #bins evolving/2000/dblpDegrees.png
+     
 
 # Analysis
 
@@ -60,4 +63,4 @@ streamlined and cached
 
 TODOs:
 
-Evolving analysis.
+Results

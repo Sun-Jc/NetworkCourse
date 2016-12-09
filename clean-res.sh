@@ -1,1 +1,0 @@
-rm evolving/*/dblp*.txt
