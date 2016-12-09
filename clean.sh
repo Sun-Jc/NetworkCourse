@@ -1,1 +1,0 @@
-rm data/graphx/evolving/*/dblp*.txt
