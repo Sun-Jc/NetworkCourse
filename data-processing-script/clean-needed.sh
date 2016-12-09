@@ -1,0 +1,1 @@
+rm evolving/*/merged*.txt
