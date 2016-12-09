@@ -2,7 +2,10 @@
 
 # Procedures(evolving network)
 0) copy every file of "data-processing-script" folder into the same folder with edges.csv and nodes.csv
+
 make sure your "$wc -l edges.csv " reveals ~15000000 lines
+
+edit config.py and input the wanted years and executing cores
 
 1) $python3 1.run.py
 
