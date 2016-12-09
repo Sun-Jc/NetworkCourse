@@ -8,8 +8,6 @@ import org.apache.spark.graphx.lib._
 import java.io._
 import it.unipd.dei.graphx.diameter.DiameterApproximation
 
-/** TODO: cache and distribute
-*/
 
 object Dblp{
   def main(args: Array[String]) {
