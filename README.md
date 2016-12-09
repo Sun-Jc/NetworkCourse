@@ -35,7 +35,7 @@ $ python3 csv2nodes.py evolving/2000/mergedNodes.csv evolving/2000/mergedNodes.t
    
    or
    
-   spark-submit: xxxxx.jar
+   $ ./bin/spark-submit simple-project_2.11-1.0.jar &
    
    get dblpRank.txt
    
