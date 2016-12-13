@@ -5,6 +5,7 @@ from concurrent.futures import ProcessPoolExecutor, wait, as_completed
  
 def hist(year,bins):
     os.system('python3 degreeHist.py evolving/{y}/dblpDegrees.txt {bins} evolving/{y}/dblpDegrees.png'.format(y=year,bins=bins))
+    os.system('python3 rankHist.py evolving/{y}/dblpRanks.txt {bins} evolving/{y}/dblpRanks.png'.format(y=year,bins=bins))
     print(year)
 
 numOfCores = config.numOfCores
