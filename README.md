@@ -15,11 +15,13 @@ every network generated inside evolving folder
 
 get network-analysis results
 
-3) $python3 3.run-degreeeHist.py 200
+3) $python3 3.run-hist.py 200
 
-get distribution of degrees
+get distribution of both degrees and pageranks
 
-4) if you need to clean-up the network data, run $
+4) spark-shell with "dblp-neighborhood.scala"
+
+get some($who)'s k-hop neighborhood: "neighborhoodEdgesXXX.csv" and "neighborhoodNoedsXXX.csv", which can be used by Gephi
 
 # Procedures(one network)
 
