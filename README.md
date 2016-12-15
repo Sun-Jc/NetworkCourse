@@ -27,7 +27,10 @@ get some($who)'s k-hop neighborhood: "neighborhoodEdgesXXX.csv" and "neighborhoo
 
 get figure along years
 
-collect_dblpRanks.txt_avg.csv.pngcollect_dblpDegrees.txt_avg.csv.pngcollect_dblpAsscociativeCoefficien.txt.csv.pngcollect_dblpAvgClusterCoeffient.txt.csv.png
+collect_dblpRanks.txt_avg.csv.png
+collect_dblpDegrees.txt_avg.csv.png
+collect_dblpAsscociativeCoefficien.txt.csv.png
+collect_dblpAvgClusterCoeffient.txt.csv.png
 
 and top ranks
 
@@ -60,9 +63,9 @@ $ python3 csv2nodes.py evolving/2000/mergedNodes.csv evolving/2000/mergedNodes.t
 
 Working functions: 
 
-1. diameter and nodes of each connect component
+%1. diameter and nodes of each connect component
 
-2. average shortest path, excluding infinities
+%2. average shortest path, excluding infinities
 
 3. pageRank of each node
 
