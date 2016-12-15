@@ -74,6 +74,8 @@ Working functions:
 
 streamlined and cached
 
-TODOs:
+# initial parsing
 
-Results
+put "dblp.xml", "dblp.dtd", "parse.jar" same folder, and then run:
+
+$java -jar parse.jar dblp.xml 
