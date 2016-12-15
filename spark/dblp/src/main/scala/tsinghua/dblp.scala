@@ -12,10 +12,10 @@ import it.unipd.dei.graphx.diameter.DiameterApproximation
 object Dblp{
   def main(args: Array[String]) {
 
-      val master = "spark://localhost:7077"
-      val folder = "/data/guojianbo/spark-2.0.2-bin-hadoop2.7"
-      //val master = "spark://Macintosh-2.local:7077"
-      //val folder = "/Users/SunJc/Downloads/spark-2.0.2-bin-hadoop2.7"
+      //val master = "spark://localhost:7077"
+      //val folder = "/data/guojianbo/spark-2.0.2-bin-hadoop2.7"
+      val master = "spark://Macintosh-2.local:7077"
+      val folder = "/Users/SunJc/Downloads/spark-2.0.2-bin-hadoop2.7"
 
       val sc = new SparkContext(master, "analysis",
       System.getenv("SPARK_HOME"), Seq(System.getenv("SPARK_TEST_JAR")))

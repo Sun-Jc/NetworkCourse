@@ -23,6 +23,16 @@ get distribution of both degrees and pageranks
 
 get some($who)'s k-hop neighborhood: "neighborhoodEdgesXXX.csv" and "neighborhoodNoedsXXX.csv", which can be used by Gephi
 
+5) $./4.4.run-collect_hist.sh
+
+get figure along years
+
+collect_dblpRanks.txt_avg.csv.pngcollect_dblpDegrees.txt_avg.csv.pngcollect_dblpAsscociativeCoefficien.txt.csv.pngcollect_dblpAvgClusterCoeffient.txt.csv.png
+
+and top ranks
+
+collect_dblpRanks.txt_topx.csv
+
 # Procedures(one network)
 
 1. $ python3 -f edges.csv -y 2000 =====>  evolving/2000/edges.csv

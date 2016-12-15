@@ -4,11 +4,10 @@ import org.apache.spark.SparkConf
 import org.apache.spark.graphx._
 import org.apache.spark.graphx.lib._
 import java.io._
-import it.unipd.dei.graphx.diameter.DiameterApproximation
 
 // Assume the SparkContext has already been constructed
 
-val DEBUG = 1
+val DEBUG = 0
 
 var whereami = System.getProperty("user.dir")
 
@@ -28,7 +27,7 @@ graph.cache()
 
 
 // whose neighbor?
-val who = 20
+val who = 34496
 
 // how many hops? 1, 2, 3
 
