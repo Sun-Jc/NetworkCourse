@@ -6,7 +6,11 @@ DBLP: http://dblp.uni-trier.de/xml/
 
 # Result
 
+Aggregated Result:
 
+https://github.com/Sun-Jc/NetworkCourse/tree/master/result-all
+
+Report: TBA
 
 # Procedures(evolving network)
 0) copy every file of "data-processing-script" folder into the same folder with edges.csv and nodes.csv
