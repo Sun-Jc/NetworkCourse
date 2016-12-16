@@ -1,0 +1,12 @@
+collect_dblpAsscociativeCoefficien.txt.csv  各年同配系数
+collect_dblpAsscociativeCoefficien.txt.csv.png  各年同配系数变化图
+collect_dblpAvgClusterCoeffient.txt.csv 各年聚类系数
+collect_dblpAvgClusterCoeffient.txt.csv.png 各年聚类系数变化图
+collect_dblpDegrees.txt_avg.csv 各年平均度数
+collect_dblpDegrees.txt_avg.csv.png 各年平均度数变化图
+collect_dblpDegrees.txt_topx.csv  各年度前10名
+collect_dblpRanks.txt_avg.csv 各年平均pageRank
+collect_dblpRanks.txt_avg.csv.png 各年平均pagerank变化图
+collect_dblpRanks.txt_topx.csv  各年pagerank前10名
+aaa/yyyy/dblpRanks.png  yyyy年的pageRank分布图, bin数为aaa
+aaa/yyyy/dblpDegrees.png  yyyy年的度分布图，, bin数为aaa

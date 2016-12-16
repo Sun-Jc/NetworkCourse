@@ -1,5 +1,13 @@
 # NetworkCourse
 
+# Data Source
+
+DBLP: http://dblp.uni-trier.de/xml/
+
+# Result
+
+
+
 # Procedures(evolving network)
 0) copy every file of "data-processing-script" folder into the same folder with edges.csv and nodes.csv
 
